@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanif Fathurrahman | Full-Stack Developer</title>
+    
+    <!-- Integrasi Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Konfigurasi Tema Kustom Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#ff8800', // Warna oranye khas Anda
+                        dark: '#000000',
+                        card: '#111111',
+                        borderGray: '#333333'
+                    },
+                    fontFamily: {
+                        sans: ['Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar untuk estetika */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #000000; }
+        ::-webkit-scrollbar-thumb { background: #ff8800; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #e67a00; }
+    </style>
+</head>
+<body class="bg-dark text-white font-sans antialiased leading-relaxed">
+
+    <!-- NAVIGATION (Semantic: nav) -->
+    <nav class="fixed w-full top-0 z-50 bg-dark/90 backdrop-blur-sm border-b border-brand transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Name -->
+                <a href="#home" class="text-xl font-bold text-white hover:text-brand transition">HF.</a>
+                
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex space-x-1">
+                    <li><a href="#home" class="px-4 py-2 text-sm font-medium text-brand hover:bg-brand hover:text-dark rounded-full transition-colors">Home</a></li>
+                    <li><a href="#about" class="px-4 py-2 text-sm font-medium text-brand hover:bg-brand hover:text-dark rounded-full transition-colors">About Me</a></li>
+                    <li><a href="#portfolio" class="px-4 py-2 text-sm font-medium text-brand hover:bg-brand hover:text-dark rounded-full transition-colors">Portofolio</a></li>
+                    <li><a href="#contact" class="px-4 py-2 text-sm font-medium text-brand hover:bg-brand hover:text-dark rounded-full transition-colors">Contact</a></li>
+                </ul>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-brand focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-card border-b border-borderGray">
+            <ul class="flex flex-col px-4 pt-2 pb-4 space-y-2 text-center">
+                <li><a href="#home" class="mobile-link block px-4 py-2 text-brand hover:bg-brand hover:text-dark rounded-md transition-colors">Home</a></li>
+                <li><a href="#about" class="mobile-link block px-4 py-2 text-brand hover:bg-brand hover:text-dark rounded-md transition-colors">About Me</a></li>
+                <li><a href="#portfolio" class="mobile-link block px-4 py-2 text-brand hover:bg-brand hover:text-dark rounded-md transition-colors">Portofolio</a></li>
+                <li><a href="#contact" class="mobile-link block px-4 py-2 text-brand hover:bg-brand hover:text-dark rounded-md transition-colors">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT (Semantic: main) -->
+    <main class="pt-16">
+        
+        <!-- SECTION 1: HOME (Semantic: header/section) -->
+        <header id="home" class="min-h-screen flex items-center justify-center py-20 px-4 md:px-8">
+            <div class="max-w-5xl mx-auto flex flex-col-reverse md:flex-row items-center gap-10 md:gap-20">
+                <div class="flex-1 text-center md:text-left">
+                    <h1 class="text-3xl md:text-5xl font-bold text-brand mb-4">Welcome to My Portfolio</h1>
+                    <p class="text-gray-300 text-base md:text-lg mb-6 leading-relaxed">
+                        Halo! Saya Hanif Fathurrahman, seorang mahasiswa dan web developer yang memiliki ketertarikan dalam dunia teknologi, khususnya dalam pengembangan sistem arsitektur web <i>end-to-end</i>.
+                    </p>
+                    <a href="#portfolio" class="inline-block bg-brand text-dark font-bold py-3 px-8 rounded-full hover:bg-orange-600 transition-transform hover:-translate-y-1">
+                        Lihat Proyek Saya
+                    </a>
+                </div>
+                <div class="flex-1 flex justify-center">
+                    <!-- Gunakan placeholder jika gambar asli belum ada agar tidak broken link -->
+                    <img src="img/GAMBAR2.jpg" onerror="this.src='https://ui-avatars.com/api/?name=Hanif+Fathurrahman&size=400&background=ff8800&color=000'" alt="Hanif Fathurrahman" class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-4 border-brand shadow-[0_0_30px_rgba(255,136,0,0.3)]">
+                </div>
+            </div>
+        </header>
+
+        <!-- SECTION 2: ABOUT ME (Semantic: section) -->
+        <section id="about" class="py-20 px-4 md:px-8 bg-[#050505]">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">About <span class="text-brand">Me</span></h2>
+                    <p class="text-gray-400 max-w-3xl mx-auto">
+                        Saya adalah seorang <strong>Full-Stack Software Developer & Tech Founder</strong> yang saat ini menempuh pendidikan Teknik Informatika di Universitas Paramadina. Fokus utama saya adalah membangun aplikasi yang skalabel, efisien, dan memberikan solusi nyata bagi pengguna.
+                    </p>
+                </div>
+
+                <!-- Skills Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Card 1 -->
+                    <div class="bg-card border border-borderGray p-6 rounded-xl text-center hover:-translate-y-2 hover:border-brand hover:shadow-[0_5px_15px_rgba(255,136,0,0.15)] transition-all duration-300">
+                        <h3 class="text-xl font-bold text-white mb-3">Backend Development</h3>
+                        <p class="text-brand text-sm">PHP, Laravel, Python (Flask), MySQL, PostgreSQL</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-card border border-borderGray p-6 rounded-xl text-center hover:-translate-y-2 hover:border-brand hover:shadow-[0_5px_15px_rgba(255,136,0,0.15)] transition-all duration-300">
+                        <h3 class="text-xl font-bold text-white mb-3">Frontend Development</h3>
+                        <p class="text-brand text-sm">JavaScript, Blade Templates, Tailwind CSS, Next.js</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-card border border-borderGray p-6 rounded-xl text-center hover:-translate-y-2 hover:border-brand hover:shadow-[0_5px_15px_rgba(255,136,0,0.15)] transition-all duration-300">
+                        <h3 class="text-xl font-bold text-white mb-3">Hardware & IoT</h3>
+                        <p class="text-brand text-sm">Arduino, ESP32, RFID/Mifare, Sensor Integration</p>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="bg-card border border-borderGray p-6 rounded-xl text-center hover:-translate-y-2 hover:border-brand hover:shadow-[0_5px_15px_rgba(255,136,0,0.15)] transition-all duration-300">
+                        <h3 class="text-xl font-bold text-white mb-3">Tools & Others</h3>
+                        <p class="text-brand text-sm">Git, Postman, C++ (SFML), UI/UX (Figma)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: PORTOFOLIO (Semantic: section) -->
+        <section id="portfolio" class="py-20 px-4 md:px-8">
+            <div class="max-w-5xl mx-auto">
+                <div class="mb-10 text-center md:text-left">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-2">MY <span class="text-brand">PORTO</span></h2>
+                    <p class="text-gray-400">Daftar riwayat rekayasa perangkat lunak dan pengembangan sistem.</p>
+                </div>
+
+                <!-- Table Wrapper (Responsive X-Scroll) -->
+                <div class="overflow-x-auto bg-[#0a0a0a] border border-borderGray rounded-lg shadow-lg">
+                    <table class="w-full text-left border-collapse min-w-[700px]">
+                        <thead>
+                            <tr class="bg-[#1a1a1a] text-brand border-b-2 border-borderGray text-sm uppercase tracking-wider">
+                                <th class="p-4 w-24">Tahun</th>
+                                <th class="p-4 w-1/4">Nama Proyek</th>
+                                <th class="p-4 w-1/4">Teknologi</th>
+                                <th class="p-4">Deskripsi & Peran</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-300">
+                            <!-- Baris 1 -->
+                            <tr class="border-b border-borderGray hover:bg-card transition-colors">
+                                <td class="p-4 text-gray-500">2026</td>
+                                <td class="p-4 font-bold text-brand">Sistem Antrean Digital & Audio</td>
+                                <td class="p-4 font-mono text-xs">Laravel 10, MySQL, Tailwind</td>
+                                <td class="p-4 text-sm leading-relaxed">Manajemen antrean dengan panggilan audio dinamis, multi-kategori, dan tiket digital.</td>
+                            </tr>
+                            <!-- Baris 2 -->
+                            <tr class="border-b border-borderGray hover:bg-card transition-colors">
+                                <td class="p-4 text-gray-500">2026</td>
+                                <td class="p-4 font-bold text-brand">SAPA (Peminjaman Aset Kampus)</td>
+                                <td class="p-4 font-mono text-xs">Laravel, MySQL, QR Code API</td>
+                                <td class="p-4 text-sm leading-relaxed">Aplikasi reservasi fasilitas kampus berbasis QR Code dengan <i>approval</i> bertingkat admin.</td>
+                            </tr>
+                            <!-- Baris 3 -->
+                            <tr class="border-b border-borderGray hover:bg-card transition-colors">
+                                <td class="p-4 text-gray-500">2026</td>
+                                <td class="p-4 font-bold text-brand">Solar-Powered IoT Buoy</td>
+                                <td class="p-4 font-mono text-xs">ESP32, SIM800L, GPS, REST API</td>
+                                <td class="p-4 text-sm leading-relaxed">Prototipe pemantauan pelampung bertenaga surya. Mengirim <i>payload</i> sensor arus dan GPS ke API.</td>
+                            </tr>
+                            <!-- Baris 4 -->
+                            <tr class="hover:bg-card transition-colors">
+                                <td class="p-4 text-gray-500">2025</td>
+                                <td class="p-4 font-bold text-brand">Canteen VMS & POS (ANPR)</td>
+                                <td class="p-4 font-mono text-xs">Laravel, Python (Flask), RFID</td>
+                                <td class="p-4 text-sm leading-relaxed">Sistem POS kantin terintegrasi <i>tap</i> RFID dan kamera ANPR Dahua melalui <i>middleware</i> Python.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: CONTACT (Semantic: section) -->
+        <section id="contact" class="py-20 px-4 md:px-8 bg-[#050505]">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">MY <span class="text-brand">CONTACT</span></h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">Punya ide proyek, tawaran kerja sama, atau sekadar ingin berdiskusi soal <i>software engineering</i>? Jangan ragu untuk menghubungi saya.</p>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-12">
+                    <!-- Informasi Kontak -->
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-brand mb-6">Contact Information</h3>
+                        <ul class="space-y-4 text-gray-300">
+                            <li class="flex flex-col sm:flex-row sm:items-center">
+                                <strong class="w-32 text-white">Location:</strong> 
+                                <span>Cipayung, Jakarta Timur</span>
+                            </li>
+                            <li class="flex flex-col sm:flex-row sm:items-center">
+                                <strong class="w-32 text-white">Email:</strong> 
+                                <a href="mailto:email.anda@gmail.com" class="text-brand hover:underline">email.anda@gmail.com</a>
+                            </li>
+                            <li class="flex flex-col sm:flex-row sm:items-center">
+                                <strong class="w-32 text-white">GitHub:</strong> 
+                                <a href="https://github.com/username-anda" target="_blank" class="text-brand hover:underline">github.com/username-anda</a>
+                            </li>
+                            <li class="flex flex-col sm:flex-row sm:items-center">
+                                <strong class="w-32 text-white">LinkedIn:</strong> 
+                                <a href="https://linkedin.com/in/username-anda" target="_blank" class="text-brand hover:underline">linkedin.com/in/username-anda</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Formulir Kontak -->
+                    <div class="flex-1 bg-card p-8 rounded-xl border border-borderGray">
+                        <form action="#" method="POST" class="space-y-5">
+                            <div>
+                                <label for="name" class="block text-sm text-gray-300 mb-2">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Nama Anda" required 
+                                    class="w-full bg-dark border border-borderGray rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-colors">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm text-gray-300 mb-2">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Email Anda" required 
+                                    class="w-full bg-dark border border-borderGray rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-colors">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm text-gray-300 mb-2">Message</label>
+                                <textarea id="message" name="message" rows="4" placeholder="Tulis pesan Anda di sini..." required 
+                                    class="w-full bg-dark border border-borderGray rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-colors resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-brand text-dark font-bold py-3 rounded-lg hover:bg-orange-600 transition-colors">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER (Semantic: footer) -->
+    <footer class="bg-[#020202] py-6 border-t border-borderGray text-center text-sm text-gray-500">
+        <p>&copy; 2026 Hanif Fathurrahman. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Script Sederhana untuk Mobile Menu -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const links = document.querySelectorAll('.mobile-link');
+
+        // Toggle menu buka/tutup
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Tutup menu saat link diklik (UX yang baik)
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
